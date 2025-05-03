@@ -1,4 +1,5 @@
 from car import Car
+from soundEffect import playCarAccelerationSound
 
 class ElectricCar(Car):
     def __init__(self, brand, model, batteryCapacity):
@@ -12,6 +13,7 @@ class ElectricCar(Car):
         if self.batteryLevel < 0:
             self.batteryLevel = 0
             self.topSpeed = 0
+        playCarAccelerationSound()
         return f"{self.brand} {self.model} is at {self.topSpeed} km/h, Battery: {self.batteryLevel}%"
 
     def charge(self, charge_amount):
